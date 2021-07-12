@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { BiMenuAltLeft, BiUserCircle } from "react-icons/bi";
-const Sidenav = ({ page, user, onToggle, showSidebar }) => {
+
+type SidenavProps = {
+    page: string,
+    user: any,
+    onToggle: any,
+    showSidebar: boolean
+}
+
+const Sidenav = ({ page, user, onToggle, showSidebar }:SidenavProps) => {
     return (
         <>
             <div className="navbar">

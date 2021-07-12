@@ -6,7 +6,7 @@ import Section from './components/Section';
 
 function App() {
   
-  let page = 'Inventory';
+  let page: string = 'Inventory';
   
   const [user, setUser] = useState([
     {
