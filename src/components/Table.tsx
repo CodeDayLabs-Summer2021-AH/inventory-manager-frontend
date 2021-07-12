@@ -1,5 +1,10 @@
 import { BiDotsVerticalRounded } from "react-icons/bi";
-const Table = ({ products }) => {
+
+type tablevProps = {
+    products: any,
+}
+
+const Table = ({ products }: tablevProps) => {
     return (
         <table>
         <th>Product ID</th>
@@ -8,7 +13,7 @@ const Table = ({ products }) => {
         <th>Section</th>
         <th>Last Verification Date </th>
         <th>Actions</th>
-        {products.map((product) => {
+        {products.map((product:any) => {
         return(
             <tr key={product.id}>
                 <td>{product.id}</td>
