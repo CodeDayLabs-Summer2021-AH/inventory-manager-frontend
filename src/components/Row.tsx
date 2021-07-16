@@ -1,9 +1,5 @@
 const Row = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return <div></div>;
+};
 
-export default Row
+export default Row;

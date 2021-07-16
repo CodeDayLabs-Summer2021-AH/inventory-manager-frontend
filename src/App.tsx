@@ -1,50 +1,70 @@
-import { useState } from 'react';
-import Sidenav from './components/Sidenav';
-import Table from './components/Table';
-import Row from './components/Row';
-import Section from './components/Section';
+import { useState, useEffect } from "react";
+import Sidenav from "./components/Sidenav";
+import Table from "./components/Table";
+import Row from "./components/Row";
+import Section from "./components/Section";
+
+export interface Inventory {
+  id: number;
+  slots: Slot[];
+}
+
+export interface Slot {
+  id: number;
+  name: string;
+  quantity: number;
+  section: string;
+  verificationDate: string;
+}
 
 function App() {
-  
-  let page: string = 'Inventory';
-  
+  let page: string = "Inventory";
+
   const [user, setUser] = useState([
     {
       id: 1,
-      firstName: 'First',
-      lastName: 'Last',
-    }
-  ])
-
-  const [sidebar, setSidebar] = useState(true)
-
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      name: 'Product 1',
-      quanity: 1000,
-      section: 'Row 1, Section 2',
-      verificationData: '06/21/2021'
+      firstName: "First",
+      lastName: "Last",
     },
-    {
-      id: 2,
-      name: 'Product 2',
-      quanity: 2000,
-      section: 'Row 1, Section 3',
-      verificationData: '06/22/2021'
-    },
-    {
-      id: 3,
-      name: 'Product 3',
-      quanity: 3000,
-      section: 'Row 2, Section 5',
-      verificationData: '06/01/2021'
-    },           
-  ])
+  ]);
+
+  const [sidebar, setSidebar] = useState(true);
+
+  const [inventory, setInventory] = useState<Inventory | null>(null);
+
+  useEffect(() => {
+    const getTasks = () => {
+      fetchInventory();
+    };
+
+    getTasks();
+  }, []);
+
+  // Fetch Inventory
+  const fetchInventory = () => {
+    fetch("/api/v1/inventory")
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          return res.text().then((text) => {
+            throw new Error(text);
+          });
+        }
+      })
+      .then((data) => setInventory(data))
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div className="App">
-      <Sidenav page={page} user={user} onToggle={() => setSidebar(!sidebar)} showSidebar={sidebar} />
-      <Table products={products}/>
+      <Sidenav
+        page={page}
+        user={user}
+        onToggle={() => setSidebar(!sidebar)}
+        showSidebar={sidebar}
+      />
+      <Table inventory={inventory} />
     </div>
   );
 }

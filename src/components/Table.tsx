@@ -1,32 +1,37 @@
 import { BiDotsVerticalRounded } from "react-icons/bi";
+import { Inventory, Slot } from "../App";
 
-type tablevProps = {
-    products: any,
-}
+type TableProps = {
+  inventory: Inventory | null;
+};
 
-const Table = ({ products }: tablevProps) => {
-    return (
-        <table>
-        <th>Product ID</th>
-        <th>Name</th>
-        <th>Location Quantity</th>
-        <th>Section</th>
-        <th>Last Verification Date </th>
-        <th>Actions</th>
-        {products.map((product:any) => {
-        return(
-            <tr key={product.id}>
-                <td>{product.id}</td>
-                <td>{product.name}</td>
-                <td>{product.quanity}</td>
-                <td>{product.section}</td>
-                <td>{product.verificationData}</td>
-                <td><BiDotsVerticalRounded/></td>
-            </tr>
-        )
-        })}
+const Table = ({ inventory }: TableProps) => {
+  return (
+    <table>
+      <th>Product ID</th>
+      <th>Name</th>
+      <th>Location Quantity</th>
+      <th>Section</th>
+      <th>Last Verification Date </th>
+      <th>Actions</th>
+      {inventory
+        ? inventory.slots.map((slot: Slot) => {
+            return (
+              <tr key={slot.id}>
+                <td>{slot.id}</td>
+                <td>{slot.name}</td>
+                <td>{slot.quantity}</td>
+                <td>{slot.section}</td>
+                <td>{slot.verificationDate}</td>
+                <td>
+                  <BiDotsVerticalRounded />
+                </td>
+              </tr>
+            );
+          })
+        : "could't load inventory"}
     </table>
-    ) 
-}
+  );
+};
 
-export default Table
+export default Table;
