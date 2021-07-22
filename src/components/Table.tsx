@@ -1,9 +1,9 @@
 import { BiDotsVerticalRounded } from "react-icons/bi";
-import { Inventory, Slot } from "../App";
+import { Inventory, Slot } from "../types/Inventory";
 
-type TableProps = {
+interface TableProps {
   inventory: Inventory | null;
-};
+}
 
 const Table = ({ inventory }: TableProps) => {
   return (

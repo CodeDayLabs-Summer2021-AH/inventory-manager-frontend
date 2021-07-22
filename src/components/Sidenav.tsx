@@ -1,21 +1,27 @@
-import { useState } from "react";
 import { BiMenuAltLeft, BiUserCircle } from "react-icons/bi";
+import { User } from "../types/User";
+import { Link } from "react-router-dom";
 
-type SidenavProps = {
-  page: string;
-  user: any;
-  onToggle: any;
+interface SidenavProps {
+  pageName: string;
+  user: User;
+  onExpandSidebarClick: () => void;
   showSidebar: boolean;
-};
+}
 
-const Sidenav = ({ page, user, onToggle, showSidebar }: SidenavProps) => {
+const Sidenav = ({
+  pageName,
+  user,
+  onExpandSidebarClick,
+  showSidebar,
+}: SidenavProps) => {
   return (
-    <>
+    <div>
       <div className="navbar">
         <i className="menu-bars">
-          <BiMenuAltLeft className="bars-icon" onClick={onToggle} />
+          <BiMenuAltLeft className="bars-icon" onClick={onExpandSidebarClick} />
         </i>
-        <h2>{page}</h2>
+        <h2>{pageName}</h2>
       </div>
       <nav className={showSidebar ? "nav-menu close" : "nav-menu"}>
         <ul className="nav-menu-items">
@@ -24,35 +30,35 @@ const Sidenav = ({ page, user, onToggle, showSidebar }: SidenavProps) => {
               <BiUserCircle />
             </i>
             <p>
-              {user[0].firstName} {user[0].lastName}
+              {user.firstName} {user.lastName}
             </p>
           </li>
           <li className="nav-link">
-            <button>Inventory</button>
+            <Link to="/inventory">Inventory</Link>
           </li>
           <li className="nav-link">
-            <button>Locations</button>
+            <Link to="/locations">Locations</Link>
           </li>
           <li className="nav-link">
-            <button>Products</button>
+            <Link to="/products">Products</Link>
           </li>
           <li className="nav-link">
-            <button>Reports</button>
+            <Link to="/reports">Reports</Link>
           </li>
         </ul>
         <ul className="nav-group-bottom">
           <li className="nav-link">
-            <button>Help</button>
+            <Link to="/help">Help</Link>
           </li>
           <li className="nav-link">
-            <button>Settings</button>
+            <Link to="/settings">Settings</Link>
           </li>
           <li className="nav-link">
-            <button>About</button>
+            <Link to="/about">About</Link>
           </li>
         </ul>
       </nav>
-    </>
+    </div>
   );
 };
 

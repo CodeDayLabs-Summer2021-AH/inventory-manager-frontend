@@ -5,7 +5,6 @@
   padding: 0;
 }
 
-
 /* Sidenav */
 
 .navbar {
@@ -26,7 +25,7 @@
 }
 
 .bars-icon {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .nav-menu {
@@ -53,12 +52,12 @@
   align-items: center;
   list-style: none;
   height: 120px;
-  vertical-align: middle; 
+  vertical-align: middle;
 }
 
 .user-icon {
   color: black;
-  font-size: 4rem;  
+  font-size: 4rem;
   vertical-align: middle;
 }
 
@@ -71,7 +70,7 @@
   height: 60px;
 }
 
-.nav-link button {
+.nav-link a {
   font-size: 18px;
   color: white;
   width: 100%;
@@ -79,12 +78,11 @@
   display: flex;
   align-items: center;
   padding: 0 16px;
-  background-color: Transparent;
-  background-repeat:no-repeat;
-  border: none;
-  cursor:pointer;
-  overflow: hidden;
-  outline:none;
+  text-decoration: none;
+}
+
+.nav-link a:hover {
+  background-color: teal;
 }
 
 .nav-group-bottom {
@@ -105,8 +103,6 @@ span {
   margin-left: 16px;
 }
 
-
-
 /* Table */
 
 table {
@@ -114,7 +110,8 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: center;
   padding: 8px;
