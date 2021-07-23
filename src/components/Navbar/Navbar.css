@@ -1,0 +1,21 @@
+.navbar {
+  background-color: rgb(27, 113, 184);
+  height: 80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: white;
+  width: 100vw;
+}
+
+.menu-bars {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
+  color: white;
+  padding-right: 2rem;
+}
+
+.bars-icon {
+  cursor: pointer;
+}

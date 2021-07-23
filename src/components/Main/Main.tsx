@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Sidenav from "../Sidenav";
+import Sidebar from "../Sidebar/Sidebar";
 import "./Main.css";
 
 interface MainProps {
@@ -16,7 +16,7 @@ const Main: React.FC<MainProps> = ({ showSidebar, children }) => {
 
   return (
     <div className="container">
-      <Sidenav showSidebar={showSidebar} user={user} />
+      <Sidebar showSidebar={showSidebar} user={user} />
       <div className="children">{children}</div>
     </div>
   );

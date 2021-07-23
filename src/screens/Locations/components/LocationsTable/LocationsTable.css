@@ -1,0 +1,37 @@
+.locations-table {
+  font-size: small;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.locations-table th {
+  border: 1px solid black;
+  text-align: center;
+  padding: 8px;
+}
+
+.locations-table tr:nth-child(odd) {
+  background: #ffffff;
+}
+/*  Define the background color for all the EVEN background rows  */
+.locations-table tr:nth-child(even) {
+  background: #cecece;
+}
+
+.header-table-row {
+  background-color: #444444 !important;
+  color: white;
+  border: 1px solid black;
+}
+
+.table-column-10pc {
+  width: 10%;
+}
+
+.table-column-25pc {
+  width: 25%;
+}
+
+.table-column-30pc {
+  width: 30%;
+}

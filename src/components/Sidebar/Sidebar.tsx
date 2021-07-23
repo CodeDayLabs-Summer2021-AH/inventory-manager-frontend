@@ -1,13 +1,14 @@
 import { BiUserCircle } from "react-icons/bi";
-import { User } from "../types/User";
+import { User } from "../../types/User";
 import { Link } from "react-router-dom";
+import "./Sidebar.css";
 
-interface SidenavProps {
+interface SidebarProps {
   showSidebar: boolean;
   user: User;
 }
 
-const Sidenav = ({ showSidebar, user }: SidenavProps) => {
+const Sidebar = ({ showSidebar, user }: SidebarProps) => {
   return (
     <div className={showSidebar ? "nav-menu" : "nav-menu close"}>
       <nav className="items-container">
@@ -49,4 +50,4 @@ const Sidenav = ({ showSidebar, user }: SidenavProps) => {
   );
 };
 
-export default Sidenav;
+export default Sidebar;

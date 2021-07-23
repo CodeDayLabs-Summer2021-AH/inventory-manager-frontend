@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import Main from "../../components/Main/Main";
-import Navbar from "../../components/Navbar";
-import Table from "../../components/Table";
 import { Inventory } from "../../types/Inventory";
+import "./InventoryScreen.css";
+import InventoryTable from "./components/InventoryTable/InventoryTable";
 
 interface InventoryScreenProps {
   showSidebar: boolean;
@@ -38,7 +38,7 @@ const InventoryScreen: React.FC<InventoryScreenProps> = ({ showSidebar }) => {
   return (
     <Main showSidebar={showSidebar}>
       <div>
-        <Table inventory={inventory} />
+        <InventoryTable inventory={inventory} />
       </div>
     </Main>
   );

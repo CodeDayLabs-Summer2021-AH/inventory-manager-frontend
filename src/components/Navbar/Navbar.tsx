@@ -1,4 +1,5 @@
 import { BiMenuAltLeft } from "react-icons/bi";
+import "./Navbar.css";
 
 interface NavbarProps {
   pageName: string;
