@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
-import Sidenav from "../../components/Sidenav";
+import Main from "../../components/Main/Main";
+import Navbar from "../../components/Navbar";
 import Table from "../../components/Table";
 import { Inventory } from "../../types/Inventory";
 
-const InventoryScreen = () => {
-  const pageName: string = "Inventory";
+interface InventoryScreenProps {
+  showSidebar: boolean;
+}
 
-  const [user, setUser] = useState({
-    id: 1,
-    firstName: "First",
-    lastName: "Last",
-  });
-  const [showSidebar, setSidebar] = useState(true);
+const InventoryScreen: React.FC<InventoryScreenProps> = ({ showSidebar }) => {
   const [inventory, setInventory] = useState<Inventory | null>(null);
 
   useEffect(() => {
@@ -39,15 +36,11 @@ const InventoryScreen = () => {
   };
 
   return (
-    <div>
-      <Sidenav
-        pageName={pageName}
-        user={user}
-        onExpandSidebarClick={() => setSidebar(!showSidebar)}
-        showSidebar={showSidebar}
-      />
-      <Table inventory={inventory} />
-    </div>
+    <Main showSidebar={showSidebar}>
+      <div>
+        <Table inventory={inventory} />
+      </div>
+    </Main>
   );
 };
 
