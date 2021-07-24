@@ -4,14 +4,8 @@
   width: 100%;
 }
 
-.inventory-table th {
-  border: 1px solid black;
-  text-align: center;
-  padding: 8px;
-  vertical-align: middle;
-}
-
-.inventory-table td {
+.inventory-table th,
+td {
   border: 1px solid black;
   text-align: center;
   padding: 8px;

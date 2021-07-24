@@ -10,14 +10,20 @@ const InventoryTable: React.FC<InventoryTableProps> = ({ inventory }) => {
   return (
     <div>
       <table className="inventory-table">
-        <th>Product ID</th>
-        <th>Name</th>
-        <th>Location Quantity</th>
-        <th>Section</th>
-        <th>Last Verification Date </th>
-        <th>Actions</th>
-        {inventory
-          ? inventory.slots.map((slot: Slot) => {
+        <thead>
+          <tr>
+            <th>Product ID</th>
+            <th>Name</th>
+            <th>Location Quantity</th>
+            <th>Section</th>
+            <th>Last Verification Date </th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {inventory &&
+            inventory.slots.map((slot: Slot) => {
               return (
                 <tr key={slot.id}>
                   <td>{slot.id}</td>
@@ -30,8 +36,8 @@ const InventoryTable: React.FC<InventoryTableProps> = ({ inventory }) => {
                   </td>
                 </tr>
               );
-            })
-          : "could't load inventory"}
+            })}
+        </tbody>
       </table>
     </div>
   );
