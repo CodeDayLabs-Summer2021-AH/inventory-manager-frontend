@@ -31,7 +31,13 @@ const LocationsTable: React.FC<LocationsTableProps> = ({ locations }) => {
             <tr key={location.id}>
               <th>{location.id}</th>
               <th>{location.name}</th>
-              <th>{location.address}</th>
+              <th>
+                {location.address.city +
+                  " " +
+                  location.address.zipOrPostcode +
+                  " " +
+                  location.address.stateProvinceCountry}
+              </th>
               <th>{location.rowCount}</th>
               <th>{location.averageSlotsPerRow}</th>
             </tr>
