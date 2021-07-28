@@ -1,6 +1,6 @@
 import { Location } from "../types/Location";
 
-export const MOCK_LOCATIONS: Location[] = [
+/*export const MOCK_LOCATIONS: Location[] = [
   {
     id: 1,
     name: "Name1",
@@ -22,4 +22,4 @@ export const MOCK_LOCATIONS: Location[] = [
     rowCount: 3,
     averageSlotsPerRow: 30,
   },
-];
+];*/

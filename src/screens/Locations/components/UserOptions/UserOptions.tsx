@@ -2,7 +2,11 @@ import { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import "./UserOptions.css";
 
-const UserOptions = () => {
+interface UserOptionsProps {
+  onSearchBarEnter: (query: String) => void;
+}
+
+const UserOptions: React.FC<UserOptionsProps> = ({ onSearchBarEnter }) => {
   const [locationsFilter, setLocationsFilter] = useState("");
 
   const onFilterLocationsInputChange = (
@@ -16,10 +20,7 @@ const UserOptions = () => {
     e: React.KeyboardEvent<HTMLInputElement>
   ) => {
     if (e.key === "Enter") {
-      // TODO: Send GET request with 'locationsFilter' as paramenter
-      console.log(
-        `Sending '${locationsFilter}' as filter to backend service...`
-      );
+      onSearchBarEnter(locationsFilter);
     }
   };
 
