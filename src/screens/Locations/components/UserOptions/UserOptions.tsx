@@ -3,7 +3,7 @@ import { BiSearch } from "react-icons/bi";
 import "./UserOptions.css";
 
 interface UserOptionsProps {
-  onSearchBarEnter: (query: String) => void;
+  onSearchBarEnter: (query: string) => void;
 }
 
 const UserOptions: React.FC<UserOptionsProps> = ({ onSearchBarEnter }) => {
