@@ -2,37 +2,34 @@ import { Item } from "../../../../types/Report";
 import "./ReportsTable.css";
 
 interface ReportsTableProps {
-  reports: Item[];
+  report: Item[];
 }
 
-const ReportsTable: React.FC<ReportsTableProps> = ({ reports }) => {
+const ReportsTable: React.FC<ReportsTableProps> = ({ report }) => {
   return (
     <div>
       <table className="reports-table">
         <thead>
           <tr>
-            <th>Product ID</th>
+            <th>ID</th>
             <th>Name</th>
-            <th>Location Quantity</th>
+            <th>Row</th>
             <th>Section</th>
-            <th>Last Verification Date </th>
-            <th>Actions</th>
+            <th>Last Count </th>
+            <th>Last Update</th>
           </tr>
         </thead>
 
         <tbody>
-          {inventory &&
-            inventory.slots.map((slot: Slot) => {
+          {report.map((item: Item) => {
               return (
-                <tr key={slot.id}>
-                  <td>{slot.id}</td>
-                  <td>{slot.name}</td>
-                  <td>{slot.quantity}</td>
-                  <td>{slot.section}</td>
-                  <td>{slot.verificationDate}</td>
-                  <td>
-                    <BiDotsVerticalRounded />
-                  </td>
+                <tr key={item.id}>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.row}</td>
+                  <td>{item.section}</td>
+                  <td>{item.lastCount}</td>
+                  <td>{item.lastUpdate}</td>
                 </tr>
               );
             })}
@@ -42,4 +39,4 @@ const ReportsTable: React.FC<ReportsTableProps> = ({ reports }) => {
   );
 };
 
-export default InventoryTable;
+export default ReportsTable;

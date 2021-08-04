@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Main from "../../components/Main/Main";
 import "./ReportsScreen.css";
-import InventoryTable from "./components/ReportsTable/ReportsTable";
+import ReportsTable from "./components/ReportsTable/ReportsTable";
 import { Item } from "../../types/Report";
 
 interface ReportsScreenProps {
@@ -38,7 +38,7 @@ const ReportsScreen: React.FC<ReportsScreenProps> = ({ showSidebar }) => {
   return (
     <Main showSidebar={showSidebar}>
       <div>
-        <ReportsTable reports={reports} />
+        <ReportsTable report={report} />
       </div>
     </Main>
   );
