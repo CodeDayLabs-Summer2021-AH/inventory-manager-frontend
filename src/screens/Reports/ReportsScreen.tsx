@@ -19,7 +19,7 @@ const ReportsScreen: React.FC<ReportsScreenProps> = ({ showSidebar }) => {
     getTasks();
   }, []);
 
-  // Fetch Inventory
+  // Fetch Report
   const fetchReport = () => {
     fetch("/api/v1/reports")
       .then((res) => {

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import InventoryScreen from "./screens/Inventory/InventoryScreen";
 import Locations from "./screens/Locations/LocationsScreen";
+import Reports from "./screens/Reports/ReportsScreen";
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -11,19 +12,19 @@ const App = () => {
     <Router>
       <div>
         <Switch>
-          <Route path="/inventory">
+          <Route path="/Reports">
             <Navbar
-              pageName="Inventory"
+              pageName="Reports"
               onExpandSidenavClick={() => setShowSidebar(!showSidebar)}
             />
-            <InventoryScreen showSidebar={showSidebar} />
+            <Reports showSidebar={showSidebar} />
           </Route>
-          <Route path="/locations">
+          <Route path="/Reports">
             <Navbar
-              pageName="Locations"
+              pageName="Reports"
               onExpandSidenavClick={() => setShowSidebar(!showSidebar)}
             />
-            <Locations showSidebar={showSidebar} />
+            <Reports showSidebar={showSidebar} />
           </Route>
         </Switch>
       </div>

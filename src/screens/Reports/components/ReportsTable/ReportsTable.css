@@ -1,10 +1,10 @@
-.inventory-table {
+.reports-table {
   font-size: medium;
   border-collapse: collapse;
   width: 100%;
 }
 
-.inventory-table th,
+.reports-table th,
 td {
   border: 1px solid black;
   text-align: center;
