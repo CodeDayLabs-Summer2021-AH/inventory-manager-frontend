@@ -1,0 +1,30 @@
+.products-table {
+  font-size: small;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.products-table th {
+  border: 1px solid black;
+  text-align: center;
+  padding: 8px;
+}
+
+.products-table tr:nth-child(odd) {
+  background: #ffffff;
+}
+/*  Define the background color for all the EVEN background rows  */
+.products-table tr:nth-child(even) {
+  background: #cecece;
+}
+
+.table-head tr {
+  background-color: #444444 !important;
+  color: white;
+  border: 1px solid black;
+}
+
+.product-img {
+  padding: 5px;
+  width: 75px;
+}

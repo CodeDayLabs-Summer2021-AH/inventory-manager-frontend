@@ -1,0 +1,28 @@
+.user-options-container {
+  height: 75px;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar-container {
+  max-width: 400px;
+  height: 32px;
+  border: 1px solid black;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.search-bar {
+  width: 85%;
+  height: 32px;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+.equal-width-column {
+  flex: 1;
+}
