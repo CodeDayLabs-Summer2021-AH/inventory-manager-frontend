@@ -11,7 +11,8 @@ module.exports = function (app) {
   app.use(
     "/api/v1/locations",
     createProxyMiddleware({
-      target: "http://localhost:5000",
+      target:
+        "http://locations-service-env.eba-asrdwhad.us-east-2.elasticbeanstalk.com/",
       changeOrigin: true,
     })
   );
