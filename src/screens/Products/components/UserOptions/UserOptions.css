@@ -1,0 +1,27 @@
+.user-options-container {
+  height: 75px;
+  display: flex;
+  align-items: center;
+}
+
+.drop-down-container {
+  max-width: 400px;
+  height: 32px;
+  border-radius: 16px;
+  display: flex;
+  float: right;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.drop-down {
+  height: 32px;
+  width: 150px;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+.equal-width-column {
+  flex: 1;
+}

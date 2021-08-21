@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import InventoryScreen from "./screens/Inventory/InventoryScreen";
 import Locations from "./screens/Locations/LocationsScreen";
+import Products from "./screens/Products/ProductsScreen";
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -25,6 +26,13 @@ const App = () => {
             />
             <Locations showSidebar={showSidebar} />
           </Route>
+          <Route path="/products">
+            <Navbar
+              pageName="Products"
+              onExpandSidenavClick={() => setShowSidebar(!showSidebar)}
+            />
+            <Products showSidebar={showSidebar} />
+          </Route>          
         </Switch>
       </div>
     </Router>
