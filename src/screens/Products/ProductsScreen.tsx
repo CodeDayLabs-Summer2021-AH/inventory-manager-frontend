@@ -24,8 +24,8 @@ const ProductsScreen: React.FC<ProductsScreenProps> = ({ showSidebar }) => {
   }, [locationId]);
 
   // Fetch a location's products
-  const fetchLocationProducts = (locationId: Number) => {
-    fetch("/api/v1/product?id=" + locationId)
+  const fetchLocationProducts = (id: number) => {
+    fetch("/api/v1/product?id=" + id)
       .then((res) => {
         if (res.ok) {
           return res.json();
