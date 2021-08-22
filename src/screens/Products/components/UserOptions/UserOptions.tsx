@@ -1,25 +1,40 @@
-import { useState } from "react";
+import React from "react";
 import "./UserOptions.css";
 
-interface OptionsProps {
-  setlocationId: any;
+interface UserOptionsProps {
+  locationOptions: string[];
+  selectedLocationId: number;
+  setSelectedLocationId: (selectedLocationId: number) => void;
 }
 
-const UserOptions: React.FC<OptionsProps> = ({ setlocationId }) => {
+const UserOptions: React.FC<UserOptionsProps> = ({
+  locationOptions,
+  selectedLocationId,
+  setSelectedLocationId,
+}) => {
+  const onSelectIndexChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedOption = e.target.value;
+    const index = locationOptions.indexOf(selectedOption);
+    setSelectedLocationId(index + 1);
+  };
 
   return (
     <div className="user-options-container">
       <div className="equal-width-column"></div>
       <div className="equal-width-column">
         <h3 style={{ textAlign: "center" }}>
-          Displaying Products for location
+          Displaying Products for Location
         </h3>
       </div>
       <div className="equal-width-column">
         <div className="drop-down-container">
-          <select >
-            <option selected value="">Select Location</option>
-            <option value="location1">Location One</option>
+          <select value={selectedLocationId} onChange={onSelectIndexChange}>
+            <option value="Select Location">Select Location</option>
+            {locationOptions.map((option: string, i: number) => (
+              <option key={i} value={option}>
+                {option}
+              </option>
+            ))}
           </select>
         </div>
       </div>

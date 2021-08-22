@@ -7,7 +7,8 @@ interface MainProps {
 }
 
 const Main: React.FC<MainProps> = ({ showSidebar, children }) => {
-  const [user, _] = useState({
+  // eslint-disable-next-line
+  const [user, setUser] = useState({
     id: 1,
     firstName: "First",
     lastName: "Last",

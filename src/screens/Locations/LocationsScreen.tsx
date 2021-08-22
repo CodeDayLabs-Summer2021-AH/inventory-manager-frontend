@@ -1,4 +1,3 @@
-import "./LocationsScreen.css";
 import { useEffect, useState } from "react";
 import Main from "../../components/Main/Main";
 import UserOptions from "./components/UserOptions/UserOptions";

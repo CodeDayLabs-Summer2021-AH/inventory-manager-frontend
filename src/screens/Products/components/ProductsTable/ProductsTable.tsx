@@ -24,7 +24,13 @@ const ProductsTable: React.FC<ProductsTableProps> = ({ locationProducts }) => {
           {locationProducts &&
             locationProducts.products.map((product: Product) => (
               <tr key={product.id}>
-                <th><img className="product-img" src={product.image}></img></th>
+                <th>
+                  <img
+                    className="product-img"
+                    src={product.image}
+                    alt="product"
+                  ></img>
+                </th>
                 <th>{product.sku}</th>
                 <th>{product.name}</th>
                 <th>{product.row}</th>

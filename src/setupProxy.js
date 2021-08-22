@@ -16,4 +16,12 @@ module.exports = function (app) {
       changeOrigin: true,
     })
   );
+  app.use(
+    "/api/v1/product",
+    createProxyMiddleware({
+      target:
+        "http://products-service-env.eba-k3zcgd4i.us-east-2.elasticbeanstalk.com/",
+      changeOrigin: true,
+    })
+  );
 };

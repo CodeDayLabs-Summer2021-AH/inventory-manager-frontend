@@ -1,4 +1,3 @@
-import "./ProductsScreen.css";
 import { useEffect, useState } from "react";
 import Main from "../../components/Main/Main";
 import UserOptions from "./components/UserOptions/UserOptions";
@@ -12,7 +11,9 @@ interface ProductsScreenProps {
 const ProductsScreen: React.FC<ProductsScreenProps> = ({ showSidebar }) => {
   const [locationProducts, setLocationProducts] =
     useState<LocationProducts | null>(null);
-  const [locationId, setlocationId] = useState(1);
+  const [locationId, setLocationId] = useState(1);
+
+  const locationOptions = ["Location One", "Location Two", "Location Three"];
 
   useEffect(() => {
     const getTasks = () => {
@@ -20,11 +21,11 @@ const ProductsScreen: React.FC<ProductsScreenProps> = ({ showSidebar }) => {
     };
 
     getTasks();
-  }, []);
+  }, [locationId]);
 
   // Fetch a location's products
   const fetchLocationProducts = (locationId: Number) => {
-    fetch("http://localhost:5000/api/v1/product?id=" + locationId)
+    fetch("/api/v1/product?id=" + locationId)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -37,11 +38,15 @@ const ProductsScreen: React.FC<ProductsScreenProps> = ({ showSidebar }) => {
       .then((data) => setLocationProducts(data))
       .catch((error) => console.error(error));
   };
-  console.log(locationProducts);
+
   return (
     <Main showSidebar={showSidebar}>
       <div>
-        <UserOptions setlocationId={setlocationId} />
+        <UserOptions
+          locationOptions={locationOptions}
+          selectedLocationId={locationId}
+          setSelectedLocationId={setLocationId}
+        />
         <ProductsTable locationProducts={locationProducts} />
       </div>
     </Main>

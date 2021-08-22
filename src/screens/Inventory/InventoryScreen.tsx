@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Main from "../../components/Main/Main";
 import { Inventory } from "../../types/Inventory";
-import "./InventoryScreen.css";
 import InventoryTable from "./components/InventoryTable/InventoryTable";
 
 interface InventoryScreenProps {
