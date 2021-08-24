@@ -1,12 +1,32 @@
 .inventory-table {
-  font-size: medium;
+  font-size: small;
   border-collapse: collapse;
   width: 100%;
 }
 
-.inventory-table th,
-td {
+.inventory-table th {
   border: 1px solid black;
   text-align: center;
   padding: 8px;
+}
+
+.inventory-table td {
+  border: 1px solid black;
+  text-align: center;
+  padding: 8px;
+  font-weight: bold;
+}
+
+.inventory-table tr:nth-child(odd) {
+  background: #ffffff;
+}
+/*  Define the background color for all the EVEN background rows  */
+.inventory-table tr:nth-child(even) {
+  background: #cecece;
+}
+
+.table-head tr {
+  background-color: #444444 !important;
+  color: white;
+  border: 1px solid black;
 }
