@@ -1,0 +1,12 @@
+.reports-table {
+  font-size: medium;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.reports-table th,
+td {
+  border: 1px solid black;
+  text-align: center;
+  padding: 8px;
+}
