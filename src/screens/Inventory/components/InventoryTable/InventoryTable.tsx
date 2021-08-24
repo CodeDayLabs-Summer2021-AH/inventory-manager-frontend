@@ -10,7 +10,7 @@ const InventoryTable: React.FC<InventoryTableProps> = ({ inventory }) => {
   return (
     <div>
       <table className="inventory-table">
-        <thead>
+        <thead className="table-head">
           <tr>
             <th>Product ID</th>
             <th>Name</th>

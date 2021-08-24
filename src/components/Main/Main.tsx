@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import "./Main.css";
 
@@ -8,6 +7,7 @@ interface MainProps {
 }
 
 const Main: React.FC<MainProps> = ({ showSidebar, children }) => {
+  // eslint-disable-next-line
   const [user, setUser] = useState({
     id: 1,
     firstName: "First",

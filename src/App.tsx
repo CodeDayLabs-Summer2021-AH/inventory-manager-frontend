@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import InventoryScreen from "./screens/Inventory/InventoryScreen";
 import Locations from "./screens/Locations/LocationsScreen";
 import Reports from "./screens/Reports/ReportsScreen";
+import Products from "./screens/Products/ProductsScreen";
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -26,6 +27,13 @@ const App = () => {
             />
             <Reports showSidebar={showSidebar} />
           </Route>
+          <Route path="/products">
+            <Navbar
+              pageName="Products"
+              onExpandSidenavClick={() => setShowSidebar(!showSidebar)}
+            />
+            <Products showSidebar={showSidebar} />
+          </Route>          
         </Switch>
       </div>
     </Router>
