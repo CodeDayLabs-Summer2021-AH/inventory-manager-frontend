@@ -12,7 +12,7 @@ module.exports = function (app) {
     "/api/v1/locations",
     createProxyMiddleware({
       target:
-        "http://locations-service-env.eba-asrdwhad.us-east-2.elasticbeanstalk.com/",
+        "http://locations-service-env.eba-asrdwhad.us-east-2.elasticbeanstalk.com",
       changeOrigin: true,
     })
   );
@@ -20,14 +20,15 @@ module.exports = function (app) {
     "/api/v1/product",
     createProxyMiddleware({
       target:
-        "http://products-service-env.eba-k3zcgd4i.us-east-2.elasticbeanstalk.com/",
+        "http://products-service-env.eba-k3zcgd4i.us-east-2.elasticbeanstalk.com",
       changeOrigin: true,
     })
   );
   app.use(
     "/api/v1/reports",
     createProxyMiddleware({
-      target: "http://localhost:5000",
+      target:
+        "http://reports-service-env.eba-hesm2pe3.us-east-2.elasticbeanstalk.com",
       changeOrigin: true,
     })
   );

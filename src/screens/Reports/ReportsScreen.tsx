@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Main from "../../components/Main/Main";
-import "./ReportsScreen.css";
 import ReportsTable from "./components/ReportsTable/ReportsTable";
 import { Item } from "../../types/Report";
 
