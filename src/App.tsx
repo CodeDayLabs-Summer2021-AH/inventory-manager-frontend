@@ -15,7 +15,7 @@ const App = () => {
         <Switch>
           <Route path="/inventory">
             <Navbar
-              pageName="Reports"
+              pageName="Inventory"
               onExpandSidenavClick={() => setShowSidebar(!showSidebar)}
             />
             <InventoryScreen showSidebar={showSidebar} />
