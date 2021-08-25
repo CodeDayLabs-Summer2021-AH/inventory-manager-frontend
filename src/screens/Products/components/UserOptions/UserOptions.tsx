@@ -23,7 +23,7 @@ const UserOptions: React.FC<UserOptionsProps> = ({
       <div className="equal-width-column"></div>
       <div className="equal-width-column">
         <h3 style={{ textAlign: "center" }}>
-          Displaying Products for Location
+          Displaying Products for Location {selectedLocationId}
         </h3>
       </div>
       <div className="equal-width-column">
